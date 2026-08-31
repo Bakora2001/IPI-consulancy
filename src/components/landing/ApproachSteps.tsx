@@ -1,45 +1,45 @@
-import { Shield, Activity, Award, Network, Globe2 } from "lucide-react";
+import { Search, PenTool, GraduationCap, PlayCircle, LineChart } from "lucide-react";
 
-// Building Entrepreneurial Institutions — flowing journey with bezier curve connector
+// The IPI 5-Stage Approach — flowing journey with bezier curve connector
 const STEPS = [
   {
     num: "01",
-    color: "#F57C20",
-    icon: Shield,
-    title: "Institutional Leadership",
-    desc: "Empowering leaders to drive change",
+    color: "#ef9d4a",
+    icon: Search,
+    title: "Diagnose",
+    desc: "Understand business, market, people and operational challenges",
     bg: "bg-[#FFF7F2]",
   },
   {
     num: "02",
-    color: "#1F2B6C",
-    icon: Activity,
-    title: "Research Commercialisation",
-    desc: "Turning ideas into real business",
+    color: "#1A237E",
+    icon: PenTool,
+    title: "Design",
+    desc: "Develop practical interventions based on identified needs",
     bg: "bg-blue-50/50",
   },
   {
     num: "03",
-    color: "#F57C20",
-    icon: Award,
-    title: "Student Innovation",
-    desc: "Nurturing the next generation",
+    color: "#ef9d4a",
+    icon: GraduationCap,
+    title: "Build Capacity",
+    desc: "Train and coach staff, entrepreneurs and business owners",
     bg: "bg-[#FFF7F2]",
   },
   {
     num: "04",
-    color: "#1F2B6C",
-    icon: Network,
-    title: "Strategic Partnerships",
-    desc: "Building a connected innovation ecosystem",
+    color: "#1A237E",
+    icon: PlayCircle,
+    title: "Implement",
+    desc: "Support the organization to put recommendations into practice",
     bg: "bg-blue-50/50",
   },
   {
     num: "05",
-    color: "#F57C20",
-    icon: Globe2,
-    title: "Sustainable Impact",
-    desc: "Driving socio-economic transformation",
+    color: "#ef9d4a",
+    icon: LineChart,
+    title: "Measure",
+    desc: "Track agreed KPIs and assess verifiable results",
     bg: "bg-[#FFF7F2]",
   },
 ];
@@ -50,16 +50,16 @@ export function ApproachSteps() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-4">
-          <span className="text-[10px] font-bold tracking-widest text-[#F57C20] uppercase bg-white border border-[#ECE7E2] px-3 py-1 rounded-full">
-            THE NEIL APPROACH
+          <span className="text-[10px] font-bold tracking-widest text-[#ef9d4a] uppercase bg-white border border-[#ECE7E2] px-3 py-1 rounded-full">
+            THE IPI APPROACH
           </span>
         </div>
-        <h2 className="text-3xl font-bold text-[#1B2559] text-center mt-3 mb-3 tracking-tight">
-          Building Entrepreneurial Institutions for Africa's Future
+        <h2 className="text-3xl font-bold text-[#1A237E] text-center mt-3 mb-3 tracking-tight">
+          Building Sustainable Businesses for South Sudan's Future
         </h2>
         <p className="text-[#667085] text-xs text-center max-w-2xl mx-auto mb-16 leading-relaxed">
-          Our collaborative approach unites academia, industry, and government to co-create solutions
-          for institutional transformation, capacity building, and research commercialisation.
+          IPI uses a rigorous, practical five-stage methodology designed to ensure every recommendation
+          translates into operational excellence, cost efficiency, and measurable commercial results.
         </p>
 
         {/* Journey with flowing bezier line */}
@@ -75,11 +75,11 @@ export function ApproachSteps() {
             >
               <defs>
                 <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#F57C20" />
-                  <stop offset="25%" stopColor="#1F2B6C" />
-                  <stop offset="50%" stopColor="#F57C20" />
-                  <stop offset="75%" stopColor="#1F2B6C" />
-                  <stop offset="100%" stopColor="#F57C20" />
+                  <stop offset="0%" stopColor="#ef9d4a" />
+                  <stop offset="25%" stopColor="#1A237E" />
+                  <stop offset="50%" stopColor="#ef9d4a" />
+                  <stop offset="75%" stopColor="#1A237E" />
+                  <stop offset="100%" stopColor="#ef9d4a" />
                 </linearGradient>
               </defs>
               <path
@@ -114,8 +114,8 @@ export function ApproachSteps() {
                     </div>
                   </div>
 
-                  <h3 className="text-[12px] font-bold text-[#1B2559] leading-snug">{step.title}</h3>
-                  <p className="text-[10px] text-[#667085] font-semibold mt-1 leading-snug">{step.desc}</p>
+                  <h3 className="text-[12px] font-bold text-[#1A237E] leading-snug">{step.title}</h3>
+                  <p className="text-[10px] text-[#667085] font-semibold mt-1 leading-snug max-w-[150px]">{step.desc}</p>
                 </div>
               );
             })}

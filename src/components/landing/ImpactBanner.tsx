@@ -1,64 +1,84 @@
-import { Handshake, Building2, CheckSquare, Users } from "lucide-react";
-
-// Impact banner — "Stronger Together, Greater Impact" with large stat circles
-const IMPACT_STATS = [
-  { num: "14+", label: "Partner\nOrganisations", icon: Handshake, color: "#F57C20", bg: "bg-[#FFF7F2]" },
-  { num: "11+", label: "Member\nInstitutions", icon: Building2, color: "#1F2B6C", bg: "bg-blue-50/50" },
-  { num: "4+",  label: "Completed\nProjects", icon: CheckSquare, color: "#F57C20", bg: "bg-[#FFF7F2]" },
-  { num: "50+", label: "Partners &\nCollaborators", icon: Users, color: "#1F2B6C", bg: "bg-blue-50/50" },
-];
+import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle2, Target, TrendingUp } from "lucide-react";
+import { COMPANY_INFO } from "../../lib/constants";
 
 export function ImpactBanner() {
   return (
-    <section className="bg-[#F6F1EB] py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 bg-gradient-to-r from-[#1A237E] via-[#283593] to-[#1A237E] text-white relative overflow-hidden">
+      {/* Texture */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="impact-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+            <circle cx="20" cy="20" r="2" fill="#fff" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#impact-pattern)" />
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div className="lg:col-span-7 space-y-6">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ef9d4a]/20 border border-[#ef9d4a]/40 text-xs font-extrabold text-[#ef9d4a] uppercase tracking-wider">
+              <Target size={14} /> Five-Year Strategic Direction (2026–2030)
+            </span>
 
-          {/* LEFT: Text */}
-          <div className="lg:col-span-4 text-left">
-            <h2 className="text-3xl font-bold text-[#1B2559] leading-tight mb-4 tracking-tight">
-              Stronger Together,<br />
-              <span className="text-[#F57C20]">Greater Impact</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight">
+              GROW · CONTROL · DEVELOP
             </h2>
-            <p className="text-[#667085] text-xs leading-relaxed mb-8">
-              Our members and partners are at the heart of everything we do.
-              Together, we are shaping the future of innovation in Africa.
-            </p>
-            <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border-2 border-[#1F2B6C] text-[#1F2B6C] text-xs font-bold hover:bg-[#1F2B6C] hover:text-white transition-all duration-200">
-              View Our Partners →
-            </button>
-          </div>
 
-          {/* RIGHT: Impact stat circles */}
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-              {IMPACT_STATS.map((s, i) => {
-                const Icon = s.icon;
-                return (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center gap-3 bg-white rounded-[30px] border border-[#ECE7E2] py-8 px-4 shadow-sm hover:shadow-md transition-all duration-200 group hover:-translate-y-1"
-                  >
-                    {/* Circular icon */}
-                    <div
-                      className={`w-[72px] h-[72px] rounded-full flex items-center justify-center border-2 border-white shadow-sm ${s.bg}`}
-                      style={{ color: s.color }}
-                    >
-                      <Icon size={26} />
-                    </div>
-                    {/* Number */}
-                    <p className="text-3xl font-bold tracking-tight" style={{ color: s.color }}>
-                      {s.num}
-                    </p>
-                    {/* Label */}
-                    <p className="text-[10px] font-bold text-[#667085] text-center leading-snug tracking-wide uppercase whitespace-pre-line">
-                      {s.label}
-                    </p>
-                  </div>
-                );
-              })}
+            <p className="text-base sm:text-lg text-white/90 leading-relaxed font-normal">
+              Our consultancy will focus on helping businesses in South Sudan grow sustainably, control costs, and build high-performing teams through practical, knowledge-driven consultancy solutions.
+            </p>
+
+            <div className="p-6 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#ef9d4a]">
+                Overall Five-Year Strategic Objective
+              </h4>
+              <p className="text-sm font-semibold text-white/95 leading-relaxed">
+                "{COMPANY_INFO.overallObjective}"
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link
+                to="/strategy"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#ef9d4a] text-white font-bold text-sm shadow-xl hover:brightness-110 transition-all duration-200 hover:scale-105"
+              >
+                Read 2026–2030 Strategic Objectives <ArrowRight size={16} />
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/60 text-white font-bold text-sm hover:bg-white/10 transition-all"
+              >
+                About Our Firm
+              </Link>
             </div>
           </div>
+
+          <div className="lg:col-span-5 space-y-4">
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-md space-y-5">
+              <h3 className="text-lg font-black text-white flex items-center gap-2">
+                <TrendingUp className="text-[#ef9d4a]" size={20} />
+                Strategic Pillars at a Glance
+              </h3>
+
+              {[
+                { title: "Grow Businesses", desc: "Revenue scaling, sales pipeline architecture & market expansion." },
+                { title: "Control Costs", desc: "Forensic cost audits, waste reduction & procurement discipline." },
+                { title: "Develop People", desc: "KPI performance systems, leadership coaching & talent retention." },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/5">
+                  <CheckCircle2 size={18} className="text-[#ef9d4a] shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-sm font-bold text-white">{item.title}</h4>
+                    <p className="text-xs text-white/70 mt-0.5">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

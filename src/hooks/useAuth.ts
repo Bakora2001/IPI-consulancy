@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { User } from "@ndip/shared/types";
+import type { User } from "../lib/types";
 import { getMe, login, register, logout } from "../lib/api-client";
 
 export function useAuth() {

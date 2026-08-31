@@ -1,64 +1,48 @@
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/landing/Hero";
-import { VideoSection } from "@/components/landing/VideoSection";
-import { StatsBar } from "@/components/landing/StatsBar";
-import { ApproachSteps } from "@/components/landing/ApproachSteps";
-import { InitiativesPanel } from "@/components/landing/InitiativesPanel";
-import { ImpactBanner } from "@/components/landing/ImpactBanner";
-import { EcosystemShowcase } from "@/components/landing/EcosystemShowcase";
-import { PartnersSection } from "@/components/landing/PartnersSection";
-import type { HomeStats, Partner } from "@ndip/shared/types";
-
-// NOTE: Static fallback data — swap for API calls once backend endpoints are live.
-
-const stats: HomeStats = {
-  memberInstitutions: 40,
-  countriesReached: 15,
-  partnersCollaborators: 50,
-  completedProjects: 25,
-  activePrograms: 5,
-};
-
-const partners: Partner[] = [
-  { id: "1", name: "Kenya Vision 2030", logoUrl: "/images/partners/vision2030.png", websiteUrl: null, featured: true },
-  { id: "2", name: "Kenya National Innovation Agency", logoUrl: "/images/partners/knia.png", websiteUrl: null, featured: true },
-  { id: "3", name: "Strathmore University", logoUrl: "/images/partners/strathmore.png", websiteUrl: null, featured: true },
-  { id: "4", name: "World Bank", logoUrl: "/images/partners/world-bank.png", websiteUrl: null, featured: true },
-  { id: "5", name: "Mastercard Foundation", logoUrl: "/images/partners/mastercard.png", websiteUrl: null, featured: true },
-  { id: "6", name: "Google", logoUrl: "/images/partners/google.png", websiteUrl: null, featured: true },
-];
+import { Header } from "../components/layout/Header";
+import { Footer } from "../components/layout/Footer";
+import { Hero } from "../components/landing/Hero";
+import { StatsBar } from "../components/landing/StatsBar";
+import { VideoSection } from "../components/landing/VideoSection";
+import { ApproachSteps } from "../components/landing/ApproachSteps";
+import { EcosystemShowcase } from "../components/landing/EcosystemShowcase";
+import { ImpactBanner } from "../components/landing/ImpactBanner";
+import { PartnersSection } from "../components/landing/PartnersSection";
+import { InitiativesPanel } from "../components/landing/InitiativesPanel";
+import { NewsSection } from "../components/landing/NewsSection";
 
 export function HomePage() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-white text-gray-900">
       <Header />
-      <main>
-        {/* 1. Hero — kept exactly as-is */}
+      <main className="flex-grow">
+        {/* 1. Hero with typewriter, 10-person unity illustration, and 2 interactive circular showcases */}
         <Hero />
 
-        {/* 2. Video Section — 60/40 split, inline video player */}
+        {/* 2. Stats Bar — Core strategic indicators */}
+        <StatsBar />
+
+        {/* 3. Consultancy Mission & Video / Overview Showcase */}
         <VideoSection />
 
-        {/* 3. Stats Bar — capsule cards with circular icons */}
-        <StatsBar stats={stats} />
-
-        {/* 4. Approach Steps — flowing journey with bezier SVG line */}
+        {/* 4. 5-Stage Performance Framework (Diagnose to Measure) */}
         <ApproachSteps />
 
-        {/* 5. Initiatives Panel — program list + orbit diagram */}
-        <InitiativesPanel />
-
-        {/* 6. Impact Banner — Stronger Together stats */}
-        <ImpactBanner />
-
-        {/* 7. Ecosystem Spotlights — Replace News & Insights */}
+        {/* 5. Core 5 Service Portfolios Showcase */}
         <EcosystemShowcase />
 
-        {/* 8. Partners — greyscale → color hover */}
-        <PartnersSection partners={partners} />
+        {/* 6. Five-Year Strategic Direction Banner (2026–2030) */}
+        <ImpactBanner />
+
+        {/* 7. High-Priority Organizations & Target Sectors in South Sudan */}
+        <PartnersSection />
+
+        {/* 8. 5-Year Implementation Roadmap Timeline */}
+        <InitiativesPanel />
+
+        {/* 9. Business Performance Briefs & Knowledge */}
+        <NewsSection />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
