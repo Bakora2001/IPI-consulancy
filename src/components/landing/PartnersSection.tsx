@@ -13,7 +13,7 @@ export function PartnersSection() {
     const matchesSearch =
       org.name.toLowerCase().includes(search.toLowerCase()) ||
       org.whyEngage.toLowerCase().includes(search.toLowerCase()) ||
-      org.whatIPIOtters.toLowerCase().includes(search.toLowerCase());
+      (org.whatIPIOffers || org.whatIPIOtters || "").toLowerCase().includes(search.toLowerCase());
     const matchesCategory = selectedCategory === "All" || org.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
@@ -112,7 +112,7 @@ export function PartnersSection() {
                     What IPI Offers
                   </p>
                   <p className="text-xs text-[#1A237E] font-semibold leading-relaxed">
-                    {org.whatIPIOtters}
+                    {org.whatIPIOffers || org.whatIPIOtters}
                   </p>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Facebook, Mail, MapPin, Phone, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { Linkedin, Twitter, Facebook, Mail, MapPin, Phone, MessageCircle, ArrowUpRight, ShieldCheck, Lock } from "lucide-react";
+import { COMPANY_INFO } from "../../lib/constants";
 
 export function Footer() {
   return (
@@ -20,61 +21,91 @@ export function Footer() {
               to="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ef9d4a] text-white font-bold text-sm shadow-lg hover:brightness-110 transition-all"
             >
-              Request Free Diagnostic Call <ArrowUpRight size={16} />
+              Request Diagnostic Call <ArrowUpRight size={16} />
             </Link>
-            <Link
-              to="/strategy"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/40 text-white font-bold text-sm hover:bg-white/10 transition-all"
+            <a
+              href={COMPANY_INFO.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-600 text-white font-bold text-sm shadow-lg hover:bg-green-700 transition-all"
             >
-              Explore 2026–2030 Roadmap
-            </Link>
+              <MessageCircle size={16} /> WhatsApp: {COMPANY_INFO.whatsApp}
+            </a>
           </div>
         </div>
       </div>
 
       {/* Main Footer Grid */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-        {/* Col 1: Brand & Positioning */}
+        {/* Col 1: Brand, Meaning of IPI & Positioning */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#ef9d4a] text-[#1A237E] flex items-center justify-center font-extrabold text-xl shadow-md">
-              IPI
+            <div className="p-2 rounded-2xl bg-white shadow-md flex items-center justify-center shrink-0">
+              <img
+                src="/images/ipi-logo-new.png"
+                alt="IPI Consultancy Logo"
+                className="h-12 sm:h-14 w-auto object-contain"
+              />
             </div>
             <div>
               <span className="text-xl font-black tracking-tight text-white">
                 IPI <span className="text-[#ef9d4a]">CONSULTANCY</span>
               </span>
-              <p className="text-[11px] text-white/60 font-medium">Juba, South Sudan</p>
+              <p className="text-[11px] text-[#ef9d4a] font-bold uppercase tracking-wider">
+                Ideal Professional Investment Ltd
+              </p>
+              <p className="text-[10px] text-white/70">Build World Centre, Nyakuron West, Juba</p>
             </div>
           </div>
 
           <p className="text-sm text-white/80 leading-relaxed max-w-md">
-            IPI Consultancy is a South Sudan-focused business and management consultancy supporting
-            organizations, businesses, and entrepreneurs to improve performance, strengthen internal
-            systems, and achieve sustainable growth.
+            {COMPANY_INFO.aboutText}
           </p>
 
-          <div className="pt-2">
+          <div className="pt-1">
             <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-[#ef9d4a]">
               Strategic Theme: GROW · CONTROL · DEVELOP
             </span>
           </div>
 
+          {/* Social Media Buttons */}
           <div className="flex gap-3 pt-2">
-            {[
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Twitter, href: "#", label: "Twitter" },
-              { icon: Facebook, href: "#", label: "Facebook" },
-            ].map(({ icon: Icon, href, label }, idx) => (
-              <a
-                key={idx}
-                href={href}
-                aria-label={label}
-                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ef9d4a] text-white transition-colors"
-              >
-                <Icon size={16} />
-              </a>
-            ))}
+            <a
+              href={COMPANY_INFO.socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ef9d4a] text-white transition-colors"
+            >
+              <Linkedin size={16} />
+            </a>
+            <a
+              href={COMPANY_INFO.socials.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ef9d4a] text-white transition-colors"
+            >
+              <Twitter size={16} />
+            </a>
+            <a
+              href={COMPANY_INFO.socials.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ef9d4a] text-white transition-colors"
+            >
+              <Facebook size={16} />
+            </a>
+            <a
+              href={COMPANY_INFO.whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="w-9 h-9 rounded-full bg-green-600/80 hover:bg-green-600 flex items-center justify-center text-white transition-colors"
+            >
+              <MessageCircle size={16} />
+            </a>
           </div>
         </div>
 
@@ -112,10 +143,10 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Col 3: Strategy & Navigation */}
+        {/* Col 3: Direct Pages Navigation */}
         <div>
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#ef9d4a]">
-            Strategic Links
+            Direct Pages
           </p>
           <ul className="space-y-2.5 text-sm text-white/80">
             <li>
@@ -130,17 +161,22 @@ export function Footer() {
             </li>
             <li>
               <Link to="/strategy" className="hover:text-[#ef9d4a] transition-colors">
-                5-Year Strategic Plan (2026–2030)
+                Our Strategic Roadmap
               </Link>
             </li>
             <li>
               <Link to="/partners" className="hover:text-[#ef9d4a] transition-colors">
-                Development Partners Matrix
+                High-Priority Partners
               </Link>
             </li>
             <li>
-              <Link to="/knowledge-hub" className="hover:text-[#ef9d4a] transition-colors">
-                SME Knowledge & Toolkits
+              <Link to="/privacy" className="hover:text-[#ef9d4a] transition-colors flex items-center gap-1.5 text-[#ef9d4a]">
+                <Lock size={12} /> Data Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-[#ef9d4a] transition-colors">
+                Contact & Diagnostics
               </Link>
             </li>
           </ul>
@@ -149,22 +185,39 @@ export function Footer() {
         {/* Col 4: Contact / Location */}
         <div>
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#ef9d4a]">
-            Juba Office
+            Juba Office & Contact
           </p>
-          <ul className="space-y-3.5 text-sm text-white/80">
+          <ul className="space-y-3 text-sm text-white/80">
             <li className="flex items-start gap-2.5">
               <MapPin size={18} className="text-[#ef9d4a] shrink-0 mt-0.5" />
-              <span>Build World Centre, Nyakuron West, Juba, South Sudan</span>
+              <div>
+                <span className="font-semibold text-white">Build World Centre</span>
+                <p className="text-xs text-white/80">Nyakuron West</p>
+                <p className="text-xs text-white/80">Juba, South Sudan</p>
+              </div>
             </li>
             <li className="flex items-center gap-2.5">
               <Mail size={16} className="text-[#ef9d4a] shrink-0" />
-              <a href="mailto:info@ipiconsultancy.com" className="hover:text-[#ef9d4a] transition-colors">
-                info@ipiconsultancy.com
+              <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-[#ef9d4a] transition-colors">
+                {COMPANY_INFO.email}
               </a>
             </li>
             <li className="flex items-center gap-2.5">
               <Phone size={16} className="text-[#ef9d4a] shrink-0" />
-              <span>+211 920 000 000</span>
+              <a href={`tel:${COMPANY_INFO.phoneCall}`} className="hover:text-[#ef9d4a] transition-colors font-semibold">
+                Calls: {COMPANY_INFO.phoneCall}
+              </a>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <MessageCircle size={16} className="text-green-400 shrink-0" />
+              <a
+                href={COMPANY_INFO.whatsAppLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-green-300 text-green-400 transition-colors font-bold"
+              >
+                WhatsApp: {COMPANY_INFO.whatsApp}
+              </a>
             </li>
             <li className="text-xs text-white/60 pt-1">
               Working Hours: Mon – Fri (8:00 AM – 5:00 PM CAT)
@@ -173,15 +226,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10 py-6 px-6 sm:px-8 bg-[#101828]">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/60">
-          <p>© {new Date().getFullYear()} IPI Consultancy. All Rights Reserved. Juba, South Sudan.</p>
-          <p className="text-[#ef9d4a] font-bold tracking-wide">
-            Grow businesses · Control costs · Develop people
-          </p>
-        </div>
-      </div>
     </footer>
   );
 }

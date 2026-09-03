@@ -112,12 +112,14 @@ export function InitiativesPanel() {
 
               {/* Center IPI Logo circle */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[110px] sm:w-[130px] h-[110px] sm:h-[130px] rounded-full bg-white border-2 border-[#ECE7E2] shadow-xl flex flex-col items-center justify-center p-2 sm:p-3 text-center">
-                  <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-xl bg-[#1A237E] text-white flex items-center justify-center font-black text-xs sm:text-base shadow-sm mb-1">
-                    <span className="text-[#ef9d4a]">I</span>PI
-                  </div>
-                  <span className="text-[9px] sm:text-[10px] font-black text-[#1A237E] tracking-tight leading-none">IPI CONSULTANCY</span>
-                  <span className="text-[7px] sm:text-[8px] font-bold text-[#ef9d4a] mt-0.5">South Sudan</span>
+                <div className="w-[110px] sm:w-[130px] h-[110px] sm:h-[130px] rounded-full bg-white border-2 border-orange-200 shadow-xl flex flex-col items-center justify-center p-2 sm:p-3 text-center">
+                  <img
+                    src="/images/ipi-logo-new.png"
+                    alt="IPI Consultancy Logo"
+                    className="h-10 sm:h-12 w-auto object-contain mb-1"
+                  />
+                  <span className="text-[8px] sm:text-[9px] font-black text-[#1A237E] tracking-tight leading-none">IPI CONSULTANCY</span>
+                  <span className="text-[7px] sm:text-[8px] font-bold text-[#ef9d4a] mt-0.5">Juba, South Sudan</span>
                 </div>
               </div>
 

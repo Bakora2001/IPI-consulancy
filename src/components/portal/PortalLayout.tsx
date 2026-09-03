@@ -114,13 +114,23 @@ export function PortalLayout({ children }: PortalLayoutProps) {
   const sidebarContent = (
     <div className="flex flex-col h-full bg-[#102A5B] text-white">
       {/* Brand Logo */}
-      <div className="flex items-center gap-3 px-6 py-6 border-b border-[#183777]/30">
-        <Link to="/" className="flex items-center">
-          <img
-            src="/images/neil-logo.png"
-            alt="NEIL Logo"
-            className="h-10 w-auto object-contain brightness-0 invert"
-          />
+      <div className="flex items-center gap-3 px-6 py-5 border-b border-[#183777]/30 bg-white/5">
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <div className="p-1.5 rounded-xl bg-white shadow-sm flex items-center justify-center">
+            <img
+              src="/images/ipi-logo-new.png"
+              alt="IPI Consultancy Logo"
+              className="h-8 w-auto object-contain"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-black text-white leading-none tracking-tight">
+              IPI <span className="text-[#ef9d4a]">CONSULTANCY</span>
+            </span>
+            <span className="text-[8px] font-bold text-white/60 tracking-wider uppercase mt-0.5">
+              Juba, South Sudan
+            </span>
+          </div>
         </Link>
       </div>
 

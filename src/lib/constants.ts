@@ -8,7 +8,8 @@ export interface PartnerOrg {
   name: string;
   category: "UN Agency" | "Development Bank" | "Bilateral Agency" | "Regional Trade" | "International NGO";
   whyEngage: string;
-  whatIPIOtters: string;
+  whatIPIOffers: string;
+  whatIPIOtters?: string; // backwards compatibility alias
   badgeColor?: string;
 }
 
@@ -31,11 +32,10 @@ export interface StrategicObjective {
   fiveYearTarget: string;
 }
 
-export interface RoadmapYear {
-  year: string;
-  focus: string;
-  keyOutcome: string;
-  milestones: string[];
+export interface StrategicPhase {
+  period: string;
+  phase: string;
+  points: string[];
 }
 
 export interface ApproachStage {
@@ -50,11 +50,21 @@ export interface ApproachStage {
 export const COMPANY_INFO = {
   name: "IPI Consultancy",
   shortName: "IPI",
+  meaning: "Ideal Professional Investment",
+  fullName: "Ideal Professional Investment Ltd (IPI Consultancy)",
   tagline: "GROW · CONTROL · DEVELOP",
   subTagline: "Grow businesses. Control costs. Develop people.",
   location: "Build World Centre, Nyakuron West, Juba, South Sudan",
+  building: "Build World Centre",
+  area: "Nyakuron West",
+  city: "Juba",
+  country: "South Sudan",
   email: "info@ipiconsultancy.com",
-  phone: "+211 920 000 000 / +211 910 000 000",
+  phone: "+211 920 000 000 / +211 912 000 000",
+  phoneCall: "+211 920 000 000",
+  phoneCallAlt: "+211 912 000 000",
+  whatsApp: "0759964753",
+  whatsAppLink: "https://wa.me/256759964753",
   consultancyFocus: "South Sudan-focused business and management consultancy",
   strategicPeriod: "2026–2030",
   heroHeadline: "Empowering South Sudan Businesses to Grow, Control Costs & Develop People",
@@ -62,6 +72,12 @@ export const COMPANY_INFO = {
     "IPI Consultancy is a South Sudan-focused business and management consultancy supporting organizations, businesses and entrepreneurs to improve performance, strengthen internal systems and achieve sustainable growth. We work at the intersection of private-sector development and organizational performance, helping businesses and development programmes translate ideas and investments into measurable commercial and operational results.",
   overallObjective:
     "To become a trusted and leading business consultancy in Juba, South Sudan, supporting businesses to achieve sustainable growth, improve cost efficiency and develop productive, well-managed human resources.",
+  socials: {
+    linkedin: "https://linkedin.com/company/ipi-consultancy-south-sudan",
+    facebook: "https://facebook.com/ipiconsultancy",
+    twitter: "https://twitter.com/ipiconsultancy",
+    whatsapp: "https://wa.me/256759964753",
+  },
 };
 
 // ── NAVIGATION LINKS ─────────────────────────────────────────────────────────
@@ -70,9 +86,9 @@ export const PRIMARY_NAV: NavItem[] = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Our Approach", href: "/approach" },
-  { label: "Strategy 2026–2030", href: "/strategy" },
+  { label: "Strategic Roadmap", href: "/strategy" },
   { label: "Partners & Sectors", href: "/partners" },
-  { label: "Knowledge Hub", href: "/knowledge-hub" },
+  { label: "Data Privacy", href: "/privacy" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -147,6 +163,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "UNDP South Sudan",
     category: "UN Agency",
     whyEngage: "Private-sector development, MSMEs, entrepreneurship, jobs and economic recovery",
+    whatIPIOffers: "Business development, SME training, strategy, HR and market assessments",
     whatIPIOtters: "Business development, SME training, strategy, HR and market assessments",
     badgeColor: "#1A237E",
   },
@@ -155,6 +172,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "World Bank / IFC",
     category: "Development Bank",
     whyEngage: "Private-sector investment, MSME finance, business-enabling environment",
+    whatIPIOffers: "Local business research, SME support, consulting and implementation",
     whatIPIOtters: "Local business research, SME support, consulting and implementation",
     badgeColor: "#0288D1",
   },
@@ -163,6 +181,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "ILO South Sudan",
     category: "UN Agency",
     whyEngage: "Enterprise development, employment, entrepreneurship and skills",
+    whatIPIOffers: "Entrepreneurship training, business advisory and HR support",
     whatIPIOtters: "Entrepreneurship training, business advisory and HR support",
     badgeColor: "#00796B",
   },
@@ -171,6 +190,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "UNIDO",
     category: "UN Agency",
     whyEngage: "SME/industrial development, value chains and private-sector capacity",
+    whatIPIOffers: "Business development, value-chain studies and capacity building",
     whatIPIOtters: "Business development, value-chain studies and capacity building",
     badgeColor: "#303F9F",
   },
@@ -179,6 +199,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "GIZ South Sudan",
     category: "Bilateral Agency",
     whyEngage: "Economic development, employment, skills and private-sector programmes",
+    whatIPIOffers: "Training, SME development and programme implementation",
     whatIPIOtters: "Training, SME development and programme implementation",
     badgeColor: "#E65100",
   },
@@ -187,6 +208,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "TradeMark Africa",
     category: "Regional Trade",
     whyEngage: "Trade facilitation, SMEs and regional trade",
+    whatIPIOffers: "SME/business development and market research",
     whatIPIOtters: "SME/business development and market research",
     badgeColor: "#512DA8",
   },
@@ -195,6 +217,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "Mercy Corps South Sudan",
     category: "International NGO",
     whyEngage: "Economic recovery, entrepreneurship, livelihoods and financial inclusion",
+    whatIPIOffers: "SME training, business coaching, market assessments",
     whatIPIOtters: "SME training, business coaching, market assessments",
     badgeColor: "#D32F2F",
   },
@@ -203,6 +226,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "Norwegian Refugee Council (NRC)",
     category: "International NGO",
     whyEngage: "Livelihoods, employment and enterprise support",
+    whatIPIOffers: "Entrepreneurship/enterprise training and business advisory",
     whatIPIOtters: "Entrepreneurship/enterprise training and business advisory",
     badgeColor: "#C2185B",
   },
@@ -211,6 +235,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "Danish Refugee Council (DRC)",
     category: "International NGO",
     whyEngage: "Livelihoods, economic recovery and resilience",
+    whatIPIOffers: "Enterprise development and capacity-building services",
     whatIPIOtters: "Enterprise development and capacity-building services",
     badgeColor: "#7B1FA2",
   },
@@ -219,6 +244,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "Catholic Relief Services (CRS)",
     category: "International NGO",
     whyEngage: "Livelihoods, markets and economic development",
+    whatIPIOffers: "Business training, value-chain and enterprise support",
     whatIPIOtters: "Business training, value-chain and enterprise support",
     badgeColor: "#1976D2",
   },
@@ -227,6 +253,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "ACTED",
     category: "International NGO",
     whyEngage: "Economic recovery, market systems and livelihoods",
+    whatIPIOffers: "Market research, SME support and field implementation",
     whatIPIOtters: "Market research, SME support and field implementation",
     badgeColor: "#F57C00",
   },
@@ -235,6 +262,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "CARE South Sudan",
     category: "International NGO",
     whyEngage: "Women's economic empowerment, livelihoods and entrepreneurship",
+    whatIPIOffers: "Business training, HR and enterprise development",
     whatIPIOtters: "Business training, HR and enterprise development",
     badgeColor: "#E91E63",
   },
@@ -243,6 +271,7 @@ export const HIGH_PRIORITY_ORGS: PartnerOrg[] = [
     name: "World Vision",
     category: "International NGO",
     whyEngage: "Livelihoods, resilience and economic empowerment",
+    whatIPIOffers: "Entrepreneurship and business development training",
     whatIPIOtters: "Entrepreneurship and business development training",
     badgeColor: "#FF6F00",
   },
@@ -328,77 +357,50 @@ export const STRATEGIC_OBJECTIVES: StrategicObjective[] = [
   },
 ];
 
-// ── FIVE-YEAR IMPLEMENTATION ROADMAP ────────────────────────────────────────
-export const IMPLEMENTATION_ROADMAP: RoadmapYear[] = [
+// ── OUR STRATEGIC ROADMAP (REPLACES FIVE-YEAR IMPLEMENTATION ROADMAP) ─────────
+export const STRATEGIC_ROADMAP: StrategicPhase[] = [
   {
-    year: "Year 1 – 2026",
-    focus: "Establish",
-    keyOutcome: "Build brand, services, systems and initial client base",
-    milestones: [
-      "Formalize operational base at Build World Centre, Juba",
-      "Launch primary business development and cost control diagnostic packages",
-      "Onboard founding roster of corporate and SME clients",
-      "Initiate outreach to key development partners (UNDP, GIZ, World Bank)",
+    period: "2026–2027",
+    phase: "Foundation",
+    points: [
+      "Establish IPI Consultancy in the South Sudan market.",
+      "Build a strong team and operational systems.",
+      "Develop partnerships with businesses, NGOs, and development organizations.",
+      "Build a strong portfolio of successful client projects.",
     ],
   },
   {
-    year: "Year 2 – 2027",
-    focus: "Grow",
-    keyOutcome: "Increase clients and establish strong business development, cost-control and HR services",
-    milestones: [
-      "Scale client portfolio across commercial retail, services, and construction",
-      "Launch standardized HR advisory & organizational restructuring services",
-      "Deliver multi-cohort SME management training programs",
-      "Achieve verified 15%+ cost reduction benchmarks across active client base",
+    period: "2028",
+    phase: "Growth",
+    points: [
+      "Expand consultancy services and client base.",
+      "Strengthen private sector development and business advisory services.",
+      "Increase strategic partnerships across South Sudan and East Africa.",
     ],
   },
   {
-    year: "Year 3 – 2028",
-    focus: "Strengthen",
-    keyOutcome: "Develop recurring contracts, training programs and strategic partnerships",
-    milestones: [
-      "Convert 50%+ of diagnostic clients into ongoing advisory retainer contracts",
-      "Secure formal implementation partner agreements with international agencies",
-      "Establish annual South Sudan Business Performance & Leadership Forum",
-      "Introduce digital performance tracking portals for retainer clients",
+    period: "2029",
+    phase: "Expansion",
+    points: [
+      "Expand into additional markets and sectors.",
+      "Develop specialized consultancy solutions.",
+      "Build stronger regional networks and partnerships.",
     ],
   },
   {
-    year: "Year 4 – 2029",
-    focus: "Expand",
-    keyOutcome: "Expand into additional sectors and locations within South Sudan",
-    milestones: [
-      "Establish operational outreach in Wau, Malakal, and Nimule trade corridor",
-      "Expand sectoral expertise in agribusiness, logistics, and renewable infrastructure",
-      "Double executive training capacity through specialized masterclasses",
-      "Establish dedicated Women's Enterprise & Youth Incubation Unit",
-    ],
-  },
-  {
-    year: "Year 5 – 2030",
-    focus: "Lead",
-    keyOutcome: "Become a recognized and trusted business consultancy in South Sudan",
-    milestones: [
-      "Lead the market as the premier South Sudan-owned management consultancy",
-      "Serve 250+ businesses and train 5,000+ managers and employees",
-      "Publish comprehensive State of South Sudan Business Performance Report",
-      "Maintain 90%+ client retention across multi-year transformation engagements",
+    period: "2030",
+    phase: "Regional Positioning",
+    points: [
+      "Position IPI Consultancy as a recognized regional consultancy firm.",
+      "Expand operations across East Africa.",
+      "Work with larger institutions, governments, NGOs, and private-sector organizations.",
     ],
   },
 ];
 
-// ── CORE PERFORMANCE MEASURES ───────────────────────────────────────────────
-export const PERFORMANCE_MEASURES = [
-  { metric: "Businesses Supported", description: "Targeting 250+ SMEs & enterprises across South Sudan", icon: "Building2" },
-  { metric: "Client Sales Growth", description: "Measurable revenue expansion through targeted market strategies", icon: "TrendingUp" },
-  { metric: "Cost Savings Achieved", description: "Documented expenditure reductions via waste elimination", icon: "DollarSign" },
-  { metric: "Profitability Improvement", description: "Direct margin enhancement and financial discipline", icon: "PieChart" },
-  { metric: "Employees Trained", description: "5,000+ staff, supervisors and executives upskilled", icon: "Users" },
-  { metric: "Productivity Gains", description: "Structured KPIs and accountable workforce management", icon: "Zap" },
-  { metric: "Recurring Contracts", description: "Long-term partnership retainers ensuring sustained impact", icon: "RefreshCw" },
-  { metric: "Client Retention Rate", description: "Maintaining >90% long-term client satisfaction and renewal", icon: "ShieldCheck" },
-  { metric: "Geographical Reach", description: "Expanding from Juba into regional trade & state capitals", icon: "MapPin" },
-];
+// ── OUR LONG-TERM VISION ───────────────────────────────────────────────────
+export const LONG_TERM_VISION =
+  "To become a trusted African consultancy partner driving sustainable businesses, stronger institutions, and economic growth.";
 
 // ── SERVICE PORTFOLIOS ─────────────────────────────────────────────────────
 export const SERVICE_PORTFOLIOS: ServiceItem[] = [

@@ -238,12 +238,22 @@ export function LoginPage() {
           </div>
 
           <div className="relative z-10">
-            <Link to="/" className="flex items-center gap-3">
-              <img
-                src="/images/neil-logo.png"
-                alt="NEIL Logo"
-                className="h-11 w-auto object-contain brightness-0 invert"
-              />
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="p-2 rounded-2xl bg-white shadow-lg flex items-center justify-center">
+                <img
+                  src="/images/ipi-logo-new.png"
+                  alt="IPI Consultancy Logo"
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg font-black text-white leading-none tracking-tight">
+                  IPI <span className="text-[#ef9d4a]">CONSULTANCY</span>
+                </span>
+                <span className="text-[9px] font-bold text-white/70 tracking-wider uppercase mt-1">
+                  Ideal Professional Investment Ltd
+                </span>
+              </div>
             </Link>
           </div>
 
@@ -252,7 +262,7 @@ export function LoginPage() {
               Welcome Back!
             </h1>
             <p className="mt-2.5 text-sm text-white/95 leading-relaxed">
-              Sign in to your account or quickly register to continue your journey with NEIL.
+              Sign in to access your IPI client portal, training resources, and strategic diagnostic reports.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -273,7 +283,7 @@ export function LoginPage() {
           </div>
 
           <div className="relative z-10 text-[10px] text-white/50 tracking-wider">
-            © {new Date().getFullYear()} NEIL. All Rights Reserved.
+            © {new Date().getFullYear()} IPI Consultancy. All Rights Reserved.
           </div>
         </div>
 
@@ -360,9 +370,9 @@ export function LoginPage() {
                 </form>
 
                 <p className="text-center text-xs font-semibold text-gray-500 pt-6">
-                  Institution wanting to join NEIL?{" "}
+                  Organization wanting to partner with IPI?{" "}
                   <button onClick={() => { setTab("register"); setRegisterRole("INSTITUTION"); }} className="text-[#ef9d4a] hover:underline font-extrabold">
-                    Register Institution Here
+                    Register Organization Here
                   </button>
                 </p>
               </div>
@@ -375,7 +385,7 @@ export function LoginPage() {
                 {/* ── STEP 1: Pick Your Role ── */}
                 {regStep === "pick-role" && (
                   <>
-                    <h2 className="text-[2rem] font-bold text-[#00103A] tracking-tight">Join NEIL</h2>
+                    <h2 className="text-[2rem] font-bold text-[#00103A] tracking-tight">Join IPI Network</h2>
                     <p className="mt-1 text-xs text-gray-500">What do you want to join as?</p>
 
                     <div className="mt-5 space-y-3">
@@ -795,7 +805,7 @@ export function LoginPage() {
                             </div>
                           </div>
                           <div>
-                            <label className={labelCls}>Intended Contributions to NEIL</label>
+                            <label className={labelCls}>Intended Contributions & Partnership with IPI</label>
                             <div className="space-y-1.5 bg-white border border-gray-100 rounded-lg p-2.5">
                               {["Technical expertise","Hosting events/trainings","Peer mentorship","Policy input","Resource mobilization","Joint project implementation"].map(c => (
                                 <label key={c} className="flex items-start gap-2 cursor-pointer">
@@ -806,7 +816,7 @@ export function LoginPage() {
                             </div>
                           </div>
                           <div>
-                            <label className={labelCls}>Strategic Interests in Joining NEIL (max 300 words)</label>
+                            <label className={labelCls}>Strategic Interests in Partnering with IPI (max 300 words)</label>
                             <textarea value={strategicInterests} onChange={e => setStrategicInterests(e.target.value)} rows={4} placeholder="Describe your institution's objectives and how you plan to engage..." className="w-full rounded-lg border border-gray-200 py-2 px-3 text-xs text-gray-800 outline-none resize-none focus:border-[#ef9d4a]" />
                           </div>
                         </div>
@@ -822,9 +832,9 @@ export function LoginPage() {
                           <div className="space-y-2 bg-white border border-gray-100 rounded-lg p-2.5">
                             {[
                               {label:"The information provided herein is accurate and complete.", state:attestCorrect, set:setAttestCorrect},
-                              {label:"The institution commits to upholding the objectives and values of NEIL.", state:attestUphold, set:setAttestUphold},
-                              {label:"The institution agrees to fulfill all membership obligations including participation, documentation, and reporting.", state:attestObligations, set:setAttestObligations},
-                              {label:"The institution authorizes NEIL to conduct necessary verifications prior to admission.", state:attestAuthorize, set:setAttestAuthorize},
+                              {label:"The institution commits to upholding the collaborative objectives and values of IPI.", state:attestUphold, set:setAttestUphold},
+                              {label:"The institution agrees to fulfill all partnership obligations including participation, documentation, and reporting.", state:attestObligations, set:setAttestObligations},
+                              {label:"The institution authorizes IPI Consultancy to conduct necessary verifications prior to partnership.", state:attestAuthorize, set:setAttestAuthorize},
                             ].map((a, i) => (
                               <label key={i} className="flex items-start gap-2 cursor-pointer">
                                 <input type="checkbox" checked={a.state} onChange={() => a.set(!a.state)} className="mt-0.5 rounded border-gray-300 text-[#ef9d4a]" />

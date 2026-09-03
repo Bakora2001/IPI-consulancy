@@ -5,12 +5,16 @@ import {
   ShieldCheck,
   Target,
   Users,
-  CheckCircle2,
   TrendingUp,
   MapPin,
   ArrowRight,
+  MessageCircle,
+  Phone,
+  Lock,
+  Building,
+  CheckCircle2,
 } from "lucide-react";
-import { COMPANY_INFO, PERFORMANCE_MEASURES } from "../lib/constants";
+import { COMPANY_INFO, LONG_TERM_VISION } from "../lib/constants";
 
 export function AboutPage() {
   return (
@@ -33,19 +37,31 @@ export function AboutPage() {
           </div>
         </section>
 
-        {/* Overview & Positioning Section */}
+        {/* Overview & Meaning of IPI */}
         <section className="py-20 px-6 sm:px-8 bg-white">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-[#ef9d4a]">
-                Our Identity & Purpose
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="px-3 py-1 rounded-full bg-orange-100 text-[#ef9d4a] text-xs font-extrabold uppercase tracking-widest">
+                  Our Identity & Name Meaning
+                </span>
+              </div>
               <h2 className="text-3xl sm:text-4xl font-black text-[#1A237E] leading-tight">
-                Bridging Private-Sector Growth & Organizational Rigor
+                What does IPI Stand For?
               </h2>
+              <div className="p-5 rounded-2xl bg-[#FDF5EC] border border-orange-200">
+                <p className="text-base font-black text-[#1A237E]">
+                  IPI = <span className="text-[#ef9d4a]">IDEAL PROFESSIONAL INVESTMENT</span>
+                </p>
+                <p className="text-xs text-gray-700 mt-1 leading-relaxed">
+                  Registered in South Sudan as <strong>Ideal Professional Investment Ltd</strong>, we operate as <strong>IPI Consultancy</strong> to provide specialized management, strategic advisory, cost optimization, and institutional capacity building.
+                </p>
+              </div>
+
               <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                 {COMPANY_INFO.aboutText}
               </p>
+
               <div className="p-6 rounded-2xl bg-[#FDF5EC] border-l-4 border-[#ef9d4a] space-y-2">
                 <p className="text-xs font-bold uppercase tracking-wider text-[#ef9d4a]">
                   Strategic Theme
@@ -59,38 +75,57 @@ export function AboutPage() {
               </div>
             </div>
 
+            {/* Right Card: Strategic Overview with Logo */}
             <div className="lg:col-span-6 bg-gradient-to-br from-[#1A237E] to-[#283593] text-white p-8 sm:p-10 rounded-3xl shadow-xl space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-[#ef9d4a] text-[#1A237E] flex items-center justify-center font-black text-xl">
-                  IPI
+              <div className="flex items-center gap-4">
+                <div className="p-2 rounded-2xl bg-white shadow-md flex items-center justify-center shrink-0">
+                  <img
+                    src="/images/ipi-logo-new.png"
+                    alt="IPI Consultancy Logo"
+                    className="h-14 sm:h-16 w-auto object-contain"
+                  />
                 </div>
                 <div>
                   <h3 className="text-xl font-black">Strategic Direction (2026–2030)</h3>
-                  <p className="text-xs text-white/70">Juba, South Sudan</p>
+                  <p className="text-xs text-[#ef9d4a] font-bold">Ideal Professional Investment Ltd</p>
+                  <p className="text-[11px] text-white/70">Juba, South Sudan</p>
                 </div>
               </div>
 
-              <p className="text-sm text-white/90 leading-relaxed">
+              <blockquote className="text-sm text-white/95 leading-relaxed italic border-l-2 border-[#ef9d4a] pl-3">
                 "{COMPANY_INFO.overallObjective}"
-              </p>
+              </blockquote>
 
               <div className="pt-4 border-t border-white/10 space-y-3 text-xs">
-                <div className="flex items-center gap-3">
-                  <MapPin size={16} className="text-[#ef9d4a] shrink-0" />
-                  <span>Build World Centre, Nyakuron West, Juba, South Sudan</span>
+                <div className="flex items-start gap-3">
+                  <MapPin size={16} className="text-[#ef9d4a] shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-bold text-white">Build World Centre</span>
+                    <p className="text-white/80 text-[11px]">Nyakuron West, Juba, South Sudan</p>
+                  </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <ShieldCheck size={16} className="text-[#ef9d4a] shrink-0" />
-                  <span>Knowledge-driven, measurable commercial outcomes</span>
+                  <Phone size={16} className="text-[#ef9d4a] shrink-0" />
+                  <span>Direct Call: {COMPANY_INFO.phoneCall}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MessageCircle size={16} className="text-green-400 shrink-0" />
+                  <span>WhatsApp: {COMPANY_INFO.whatsApp}</span>
                 </div>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-wrap gap-3">
                 <Link
                   to="/strategy"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ef9d4a] text-white font-bold text-xs shadow-md hover:brightness-110 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#ef9d4a] text-white font-bold text-xs shadow-md hover:brightness-110 transition-all"
                 >
-                  View 2026–2030 Strategic Objectives <ArrowRight size={14} />
+                  Our Strategic Roadmap <ArrowRight size={14} />
+                </Link>
+                <Link
+                  to="/privacy"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/30 text-white font-bold text-xs hover:bg-white/10 transition-all"
+                >
+                  <Lock size={12} /> Data Privacy Policy
                 </Link>
               </div>
             </div>
@@ -105,7 +140,7 @@ export function AboutPage() {
                 Distinctive Position
               </span>
               <h2 className="text-3xl font-black text-[#1A237E] mt-1">
-                Why IPI in the Juba Market
+                Why IPI in the South Sudan Market
               </h2>
               <p className="text-xs sm:text-sm text-gray-600 mt-2">
                 Not simply providing theoretical advice, but helping businesses improve their actual performance on the ground.
@@ -145,33 +180,66 @@ export function AboutPage() {
           </div>
         </section>
 
-        {/* Core Performance Measures Grid */}
-        <section className="py-20 px-6 sm:px-8 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center max-w-2xl mx-auto mb-12">
+        {/* Institutional Foundation & Long-Term Vision Showcase */}
+        <section className="py-20 px-6 sm:px-8 bg-white border-t border-orange-100">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="space-y-6">
               <span className="text-xs font-bold uppercase tracking-widest text-[#ef9d4a]">
-                Accountability
+                Institutional Trust
               </span>
-              <h2 className="text-3xl font-black text-[#1A237E] mt-1">
-                How We Measure Success
+              <h2 className="text-3xl font-black text-[#1A237E]">
+                Client Confidentiality & Strict Data Protection
               </h2>
-              <p className="text-xs sm:text-sm text-gray-600 mt-2">
-                Our consultancy is evaluated against clear, verifiable client transformation benchmarks.
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Management consulting requires mutual trust. At IPI Consultancy, all financial evaluations, HR payroll data, vendor cost disclosures, and market strategies are protected under our mandatory Non-Disclosure Agreements (NDA) and institutional data privacy protocols.
               </p>
+
+              <div className="space-y-3">
+                {[
+                  "Mandatory mutual Non-Disclosure Agreement (NDA) executed before all client diagnostics.",
+                  "Zero data monetization or third-party sharing of organizational records.",
+                  "Encrypted digital records and secure role-based file handling.",
+                  "Full client ownership and discretionary deletion upon project handover.",
+                ].map((pt, i) => (
+                  <div key={i} className="flex items-start gap-2.5 text-xs text-gray-700">
+                    <CheckCircle2 size={16} className="text-green-600 shrink-0 mt-0.5" />
+                    <span>{pt}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-2">
+                <Link
+                  to="/privacy"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ef9d4a] hover:underline"
+                >
+                  Read our complete Data Privacy & Confidentiality Policy →
+                </Link>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {PERFORMANCE_MEASURES.map((pm, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-[#FDF5EC] border border-orange-200/50 flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-lg bg-[#1A237E] text-[#ef9d4a] flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 size={18} />
-                  </div>
-                  <div>
-                    <h4 className="font-extrabold text-[#1A237E] text-sm">{pm.metric}</h4>
-                    <p className="text-xs text-gray-600 mt-1 leading-relaxed">{pm.description}</p>
-                  </div>
-                </div>
-              ))}
+            {/* Long-Term Vision Banner */}
+            <div className="p-8 sm:p-10 rounded-3xl bg-[#101828] text-white space-y-5 border border-white/10 shadow-xl">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-[#ef9d4a]">
+                <Building size={20} />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#ef9d4a]">
+                Continental Ambition
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-white">
+                Our Long-Term Vision
+              </h3>
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed font-semibold italic border-l-2 border-[#ef9d4a] pl-4">
+                "{LONG_TERM_VISION}"
+              </p>
+              <div className="pt-2">
+                <Link
+                  to="/strategy"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#ef9d4a] text-white font-bold text-xs hover:brightness-110 transition-all"
+                >
+                  Explore Strategic Roadmap (2026–2030) <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -183,15 +251,23 @@ export function AboutPage() {
               Let's Discuss Your Business Growth in South Sudan
             </h2>
             <p className="text-sm sm:text-base text-white/80">
-              Visit us at Build World Centre, Nyakuron West, Juba, or schedule an initial diagnostic consultation.
+              Visit us at Build World Centre, Nyakuron West, Juba, or schedule an initial diagnostic consultation with our leadership team.
             </p>
-            <div className="flex justify-center gap-4 pt-2">
+            <div className="flex flex-wrap justify-center gap-4 pt-2">
               <Link
                 to="/contact"
                 className="px-8 py-3.5 rounded-full bg-[#ef9d4a] text-white font-bold text-sm shadow-xl hover:brightness-110 transition-all"
               >
                 Schedule Diagnostic Consultation
               </Link>
+              <a
+                href={COMPANY_INFO.whatsAppLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3.5 rounded-full bg-green-600 text-white font-bold text-sm shadow-xl hover:bg-green-700 transition-all flex items-center gap-2"
+              >
+                <MessageCircle size={16} /> WhatsApp Us
+              </a>
             </div>
           </div>
         </section>

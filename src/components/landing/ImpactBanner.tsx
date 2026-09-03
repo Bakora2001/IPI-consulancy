@@ -45,7 +45,7 @@ export function ImpactBanner() {
                 to="/strategy"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#ef9d4a] text-white font-bold text-sm shadow-xl hover:brightness-110 transition-all duration-200 hover:scale-105"
               >
-                Read 2026–2030 Strategic Objectives <ArrowRight size={16} />
+                Explore Strategic Roadmap <ArrowRight size={16} />
               </Link>
               <Link
                 to="/about"

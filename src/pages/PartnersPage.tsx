@@ -22,7 +22,7 @@ export function PartnersPage() {
     const matchesSearch =
       org.name.toLowerCase().includes(search.toLowerCase()) ||
       org.whyEngage.toLowerCase().includes(search.toLowerCase()) ||
-      org.whatIPIOtters.toLowerCase().includes(search.toLowerCase());
+      (org.whatIPIOffers || org.whatIPIOtters || "").toLowerCase().includes(search.toLowerCase());
     const matchesCat = categoryFilter === "All" || org.category === categoryFilter;
     return matchesSearch && matchesCat;
   });
@@ -112,7 +112,7 @@ export function PartnersPage() {
                       </td>
                       <td className="py-4 px-6 text-gray-900 font-semibold max-w-xs leading-relaxed">
                         <div className="p-2 rounded-lg bg-orange-50/80 border border-orange-200/40 text-[#1A237E]">
-                          {org.whatIPIOtters}
+                          {org.whatIPIOffers || org.whatIPIOtters}
                         </div>
                       </td>
                       <td className="py-4 px-6 text-right">
@@ -152,7 +152,7 @@ export function PartnersPage() {
 
                   <div className="p-3 rounded-xl bg-[#FDF5EC] border border-orange-200">
                     <p className="text-[10px] font-bold uppercase text-[#ef9d4a]">What IPI Offers</p>
-                    <p className="text-xs font-semibold text-[#1A237E] mt-0.5">{org.whatIPIOtters}</p>
+                    <p className="text-xs font-semibold text-[#1A237E] mt-0.5">{org.whatIPIOffers || org.whatIPIOtters}</p>
                   </div>
 
                   <div className="pt-2 flex justify-end">

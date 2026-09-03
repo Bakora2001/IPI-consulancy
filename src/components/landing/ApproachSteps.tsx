@@ -7,7 +7,7 @@ const STEPS = [
     color: "#ef9d4a",
     icon: Search,
     title: "Diagnose",
-    desc: "Understand business, market, people and operational challenges",
+    desc: "Understand the business, market, people and operational challenges.",
     bg: "bg-[#FFF7F2]",
   },
   {
@@ -15,7 +15,7 @@ const STEPS = [
     color: "#1A237E",
     icon: PenTool,
     title: "Design",
-    desc: "Develop practical interventions based on identified needs",
+    desc: "Develop a practical intervention based on identified needs.",
     bg: "bg-blue-50/50",
   },
   {
@@ -23,7 +23,7 @@ const STEPS = [
     color: "#ef9d4a",
     icon: GraduationCap,
     title: "Build Capacity",
-    desc: "Train and coach staff, entrepreneurs and business owners",
+    desc: "Train and coach staff, entrepreneurs and business owners.",
     bg: "bg-[#FFF7F2]",
   },
   {
@@ -31,7 +31,7 @@ const STEPS = [
     color: "#1A237E",
     icon: PlayCircle,
     title: "Implement",
-    desc: "Support the organization to put recommendations into practice",
+    desc: "Support the organization to put recommendations into practice.",
     bg: "bg-blue-50/50",
   },
   {
@@ -39,7 +39,7 @@ const STEPS = [
     color: "#ef9d4a",
     icon: LineChart,
     title: "Measure",
-    desc: "Track agreed KPIs and assess verifiable results",
+    desc: "Track agreed KPIs and assess results.",
     bg: "bg-[#FFF7F2]",
   },
 ];

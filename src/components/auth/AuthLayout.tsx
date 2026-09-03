@@ -56,16 +56,19 @@ export function AuthLayout({ children }: { children: ReactNode }) {
         {/* Top Header branding */}
         <div className="relative z-10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2.2"/>
-                <path d="M8 12l2 2 4-4" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
-              </svg>
+            <div className="p-1.5 rounded-2xl bg-white shadow-md flex items-center justify-center">
+              <img
+                src="/images/ipi-logo-new.png"
+                alt="IPI Consultancy Logo"
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <div>
-              <p className="text-lg font-black tracking-tight leading-none text-white">NEIL</p>
+              <p className="text-lg font-black tracking-tight leading-none text-white">
+                IPI <span className="text-[#ef9d4a]">CONSULTANCY</span>
+              </p>
               <p className="text-[9px] font-semibold text-white/70 uppercase tracking-widest mt-0.5">
-                Network of Entrepreneurial Institution Leaders
+                Ideal Professional Investment Ltd
               </p>
             </div>
           </div>
@@ -77,7 +80,7 @@ export function AuthLayout({ children }: { children: ReactNode }) {
             Welcome Back!
           </h1>
           <p className="mt-2.5 text-sm text-white/90 leading-relaxed">
-            Sign in to your account and continue your journey with NEIL.
+            Sign in to your account and continue your journey with IPI Consultancy.
           </p>
 
           {/* Features check-list */}
@@ -100,7 +103,7 @@ export function AuthLayout({ children }: { children: ReactNode }) {
 
         {/* Footer info/copyright */}
         <div className="relative z-10 text-[10px] text-white/50 tracking-wider">
-          © {new Date().getFullYear()} NEIL. All Rights Reserved.
+          © {new Date().getFullYear()} IPI Consultancy. All Rights Reserved.
         </div>
       </div>
 

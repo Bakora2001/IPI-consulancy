@@ -9,6 +9,7 @@ import { ImpactBanner } from "../components/landing/ImpactBanner";
 import { PartnersSection } from "../components/landing/PartnersSection";
 import { InitiativesPanel } from "../components/landing/InitiativesPanel";
 import { NewsSection } from "../components/landing/NewsSection";
+import { MapSection } from "../components/landing/MapSection";
 
 export function HomePage() {
   return (
@@ -41,6 +42,9 @@ export function HomePage() {
 
         {/* 9. Business Performance Briefs & Knowledge */}
         <NewsSection />
+
+        {/* 10. Juba Headquarters Interactive Map & Office Location */}
+        <MapSection />
       </main>
       <Footer />
     </div>

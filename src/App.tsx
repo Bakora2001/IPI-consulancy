@@ -7,6 +7,7 @@ import { StrategyPage } from "./pages/StrategyPage";
 import { PartnersPage } from "./pages/PartnersPage";
 import { KnowledgeHub } from "./pages/KnowledgeHub";
 import { ContactPage } from "./pages/ContactPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
 import { LoginPage } from "./pages/LoginPage";
 import { StudentDashboard } from "./pages/StudentDashboard";
 import { FacultyDashboard } from "./pages/FacultyDashboard";
@@ -26,6 +27,7 @@ export default function App() {
       <Route path="/partners" element={<PartnersPage />} />
       <Route path="/knowledge-hub" element={<KnowledgeHub />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/login" element={<LoginPage />} />
 
       {/* ── Role-based Dashboards / Portal ────────────────────────── */}
