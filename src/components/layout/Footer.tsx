@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Facebook, Mail, MapPin, Phone, MessageCircle, ArrowUpRight, ShieldCheck, Lock } from "lucide-react";
+import { Linkedin, Facebook, Mail, MapPin, Phone, MessageCircle, ArrowUpRight, ShieldCheck, Lock } from "lucide-react";
+import { XIcon } from "../common/XIcon";
 import { COMPANY_INFO } from "../../lib/constants";
 
 export function Footer() {
@@ -27,9 +28,17 @@ export function Footer() {
               href={COMPANY_INFO.whatsAppLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-600 text-white font-bold text-sm shadow-lg hover:bg-green-700 transition-all"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-green-600 text-white font-bold text-sm shadow-lg hover:bg-green-700 transition-all"
             >
-              <MessageCircle size={16} /> WhatsApp: {COMPANY_INFO.whatsApp}
+              <MessageCircle size={16} /> WhatsApp: +254 759 964753
+            </a>
+            <a
+              href={COMPANY_INFO.whatsAppSecondaryLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-green-700 text-white font-bold text-sm shadow-lg hover:bg-green-800 transition-all"
+            >
+              <MessageCircle size={16} /> WhatsApp: +211 922 596464
             </a>
           </div>
         </div>
@@ -80,13 +89,14 @@ export function Footer() {
               <Linkedin size={16} />
             </a>
             <a
-              href={COMPANY_INFO.socials.twitter}
+              href={COMPANY_INFO.socials.x}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Twitter"
+              aria-label="X"
+              title="X"
               className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ef9d4a] text-white transition-colors"
             >
-              <Twitter size={16} />
+              <XIcon size={15} />
             </a>
             <a
               href={COMPANY_INFO.socials.facebook}
@@ -101,8 +111,19 @@ export function Footer() {
               href={COMPANY_INFO.whatsAppLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp"
+              aria-label="WhatsApp Kenya"
+              title="WhatsApp Kenya (+254 759 964753)"
               className="w-9 h-9 rounded-full bg-green-600/80 hover:bg-green-600 flex items-center justify-center text-white transition-colors"
+            >
+              <MessageCircle size={16} />
+            </a>
+            <a
+              href={COMPANY_INFO.whatsAppSecondaryLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp South Sudan"
+              title="WhatsApp South Sudan (+211 922 596464)"
+              className="w-9 h-9 rounded-full bg-green-700/80 hover:bg-green-700 flex items-center justify-center text-white transition-colors"
             >
               <MessageCircle size={16} />
             </a>
@@ -196,11 +217,16 @@ export function Footer() {
                 <p className="text-xs text-white/80">Juba, South Sudan</p>
               </div>
             </li>
-            <li className="flex items-center gap-2.5">
-              <Mail size={16} className="text-[#ef9d4a] shrink-0" />
-              <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-[#ef9d4a] transition-colors">
-                {COMPANY_INFO.email}
-              </a>
+            <li className="flex items-start gap-2.5">
+              <Mail size={16} className="text-[#ef9d4a] shrink-0 mt-0.5" />
+              <div>
+                <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-[#ef9d4a] transition-colors font-medium block">
+                  {COMPANY_INFO.email}
+                </a>
+                <Link to="/contact#department-emails" className="text-[11px] text-[#ef9d4a] hover:underline font-bold block mt-0.5">
+                  View All Department Emails →
+                </Link>
+              </div>
             </li>
             <li className="flex items-center gap-2.5">
               <Phone size={16} className="text-[#ef9d4a] shrink-0" />
@@ -208,16 +234,29 @@ export function Footer() {
                 Calls: {COMPANY_INFO.phoneCall}
               </a>
             </li>
-            <li className="flex items-center gap-2.5">
-              <MessageCircle size={16} className="text-green-400 shrink-0" />
-              <a
-                href={COMPANY_INFO.whatsAppLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-green-300 text-green-400 transition-colors font-bold"
-              >
-                WhatsApp: {COMPANY_INFO.whatsApp}
-              </a>
+            <li className="flex items-start gap-2.5">
+              <MessageCircle size={16} className="text-green-400 shrink-0 mt-0.5" />
+              <div>
+                <span className="text-xs font-bold text-green-400 block">WhatsApp:</span>
+                <div className="flex flex-col text-xs text-white/90">
+                  <a
+                    href={COMPANY_INFO.whatsAppLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-green-300 transition-colors"
+                  >
+                    +254 759 964753 (KE)
+                  </a>
+                  <a
+                    href={COMPANY_INFO.whatsAppSecondaryLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-green-300 transition-colors"
+                  >
+                    +211 922 596464 (SS)
+                  </a>
+                </div>
+              </div>
             </li>
             <li className="text-xs text-white/60 pt-1">
               Working Hours: Mon – Fri (8:00 AM – 5:00 PM CAT)

@@ -15,9 +15,9 @@ import {
   ExternalLink,
   Linkedin,
   Facebook,
-  Twitter,
 } from "lucide-react";
-import { COMPANY_INFO } from "../lib/constants";
+import { XIcon } from "../components/common/XIcon";
+import { COMPANY_INFO, DEPARTMENT_EMAILS } from "../lib/constants";
 
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -43,37 +43,33 @@ export function ContactPage() {
       <main className="flex-grow">
         {/* Page Hero */}
         <section className="bg-gradient-to-br from-[#0e1647] via-[#1A237E] to-[#121858] text-white py-20 px-6 sm:px-8">
-          <div className="max-w-6xl mx-auto text-center space-y-6">
+          <div className="max-w-5xl mx-auto text-center space-y-5">
             <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-[#ef9d4a]/50 text-xs font-bold text-[#ef9d4a] uppercase tracking-widest">
-              Contact & Diagnostics
+              Direct Contact & Diagnostic Bookings
             </span>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight">
-              Get in Touch with IPI Consultancy
+              Start Your Performance Transformation
             </h1>
-            <p className="max-w-3xl mx-auto text-base sm:text-lg text-white/90 leading-relaxed font-normal">
+            <p className="max-w-2xl mx-auto text-base sm:text-lg text-white/90 leading-relaxed font-normal">
               Schedule an operational diagnostic call, message us on WhatsApp, or visit our headquarters at Build World Centre, Nyakuron West, Juba.
             </p>
           </div>
         </section>
 
-        {/* Contact Form & Location Grid */}
-        <section className="py-20 px-6 sm:px-8 bg-white">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            {/* Contact Details Column (5 Cols) */}
+        {/* Contact Layout */}
+        <section className="py-16 px-6 sm:px-8 bg-white">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Contact Details Card (5 Cols) */}
             <div className="lg:col-span-5 space-y-6">
               <div>
                 <span className="text-xs font-extrabold uppercase tracking-widest text-[#ef9d4a]">
-                  Juba Head Office
+                  Direct Channels
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-[#1A237E] mt-1 mb-2">
-                  Where to Find Us
-                </h2>
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-wide">
-                  Ideal Professional Investment Ltd (IPI Consultancy)
-                </p>
-                <p className="text-sm text-gray-600 leading-relaxed mt-2">
-                  We are conveniently situated in Juba to serve private enterprises, SMEs, humanitarian organizations, and development actors across South Sudan.
+                <h3 className="text-2xl font-black text-[#1A237E] mt-1">
+                  Connect Directly with IPI
+                </h3>
+                <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+                  Our team is available Monday through Friday to address private sector, NGO, and institutional inquiries across South Sudan.
                 </p>
               </div>
 
@@ -115,19 +111,33 @@ export function ContactPage() {
                   <div className="w-10 h-10 rounded-xl bg-green-600 text-white flex items-center justify-center shrink-0">
                     <MessageCircle size={20} />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-sm text-green-900">WhatsApp Direct</h4>
-                    <p className="text-xs text-green-800 font-black mt-0.5">
-                      {COMPANY_INFO.whatsApp}
-                    </p>
-                    <a
-                      href={COMPANY_INFO.whatsAppLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-green-700 hover:text-green-800 underline mt-1"
-                    >
-                      Open WhatsApp Chat Now <ExternalLink size={12} />
-                    </a>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-sm text-green-900">WhatsApp Direct Support</h4>
+                    <p className="text-xs text-gray-600 mt-0.5">Quick instant response on either line:</p>
+                    <div className="mt-2 space-y-1.5">
+                      <div className="flex items-center justify-between gap-2 bg-white/80 p-2 rounded-xl border border-green-100">
+                        <span className="text-xs font-bold text-green-950">+254 759 964753 (KE)</span>
+                        <a
+                          href={COMPANY_INFO.whatsAppLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[11px] font-bold text-green-700 hover:text-green-900 underline"
+                        >
+                          Chat Now <ExternalLink size={11} />
+                        </a>
+                      </div>
+                      <div className="flex items-center justify-between gap-2 bg-white/80 p-2 rounded-xl border border-green-100">
+                        <span className="text-xs font-bold text-green-950">+211 922 596464 (SS)</span>
+                        <a
+                          href={COMPANY_INFO.whatsAppSecondaryLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[11px] font-bold text-green-700 hover:text-green-900 underline"
+                        >
+                          Chat Now <ExternalLink size={11} />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -137,13 +147,19 @@ export function ContactPage() {
                     <Mail size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-[#1A237E]">Official Inquiries</h4>
+                    <h4 className="font-bold text-sm text-[#1A237E]">Official & Departmental Emails</h4>
                     <p className="text-xs text-gray-800 font-semibold mt-0.5">
+                      General:{" "}
                       <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-[#ef9d4a] transition-colors">
                         {COMPANY_INFO.email}
                       </a>
                     </p>
-                    <p className="text-[11px] text-gray-500">Responses delivered within 24 hours</p>
+                    <a
+                      href="#department-emails"
+                      className="inline-block text-[11px] font-bold text-[#ef9d4a] hover:underline mt-1"
+                    >
+                      View All 7 Departmental Inboxes ↓
+                    </a>
                   </div>
                 </div>
 
@@ -183,12 +199,14 @@ export function ContactPage() {
                     <Facebook size={15} /> Facebook
                   </a>
                   <a
-                    href={COMPANY_INFO.socials.twitter}
+                    href={COMPANY_INFO.socials.x}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="X"
+                    title="X"
                     className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gray-100 text-gray-800 hover:bg-black hover:text-white transition-all text-xs font-bold"
                   >
-                    <Twitter size={15} /> Twitter / X
+                    <XIcon size={14} /> X
                   </a>
                 </div>
               </div>
@@ -295,11 +313,13 @@ export function ContactPage() {
                         onChange={(e) => setFormData({ ...formData, serviceNeeded: e.target.value })}
                         className="w-full px-4 py-2.5 text-xs bg-white rounded-xl border border-orange-200 focus:outline-none focus:ring-2 focus:ring-[#ef9d4a] text-gray-800"
                       >
-                        <option value="Business Development and Sales">Business Development and Sales</option>
-                        <option value="Finance & Cost Control">Finance and Cost Control</option>
-                        <option value="Human Resources & Organizational Development">Human Resources & Org Development</option>
-                        <option value="Customer Care and Admin">Customer Care and Admin</option>
-                        <option value="General Management & Strategy">General Management & Strategic Advisory</option>
+                        <option value="Customer Care">Customer Care & Support (customer@ipiconsultancy.com)</option>
+                        <option value="Admin">Admin & Operations (admin@ipiconsultancy.com)</option>
+                        <option value="Finance">Finance & Cost Control (finance@ipiconsultancy.com)</option>
+                        <option value="Business Development">Business Development (businessdevelopment@ipiconsultancy.com)</option>
+                        <option value="Sales">Sales & Consultancy Packages (sales@ipiconsultancy.com)</option>
+                        <option value="Human Resources">Human Resources & Talent (hr@ipiconsultancy.com)</option>
+                        <option value="General Inquiries">General Management & Advisory (general@ipiconsultancy.com)</option>
                         <option value="Stage 01 Full Diagnostic">Full Organizational Diagnostic (5-Stage Model)</option>
                       </select>
                     </div>
@@ -382,6 +402,63 @@ export function ContactPage() {
                 </div>
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Departmental Email Directory Section */}
+        <section id="department-emails" className="py-16 px-6 sm:px-8 bg-[#FDF5EC]/70 border-t border-orange-200/60 scroll-mt-20">
+          <div className="max-w-7xl mx-auto space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-white border border-[#ef9d4a]/50 text-xs font-bold text-[#ef9d4a] uppercase tracking-wider">
+                Direct Communication Channels
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-[#1A237E]">
+                Departmental Email Directory
+              </h2>
+              <p className="text-sm text-gray-700">
+                Direct your message directly to the designated department at IPI Consultancy (using the <span className="font-bold text-[#1A237E]">@ipiconsultancy.com</span> domain) for fast, focused assistance.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              {DEPARTMENT_EMAILS.map((item) => (
+                <div
+                  key={item.id}
+                  className="p-6 rounded-2xl bg-white border border-orange-200/80 shadow-sm hover:shadow-md hover:border-[#ef9d4a]/60 transition-all flex flex-col justify-between space-y-4"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-[#ef9d4a] bg-orange-50 px-2.5 py-0.5 rounded-full border border-orange-100">
+                        Department
+                      </span>
+                      <span className="w-2 h-2 rounded-full bg-green-500" title="Active communication channel" />
+                    </div>
+                    <h3 className="text-lg font-black text-[#1A237E]">
+                      {item.department}
+                    </h3>
+                    <p className="text-xs text-gray-600 leading-relaxed min-h-[36px]">
+                      {item.role}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-gray-100 space-y-2.5">
+                    <a
+                      href={`mailto:${item.email}`}
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#1A237E] hover:text-[#ef9d4a] transition-colors break-all"
+                    >
+                      <Mail size={14} className="text-[#ef9d4a] shrink-0" />
+                      {item.email}
+                    </a>
+                    <a
+                      href={`mailto:${item.email}`}
+                      className="w-full py-2 px-3 rounded-xl bg-[#1A237E] text-center text-xs font-bold text-white hover:bg-[#ef9d4a] hover:text-white transition-all block shadow-sm"
+                    >
+                      Email {item.department} →
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

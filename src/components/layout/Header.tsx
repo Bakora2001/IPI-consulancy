@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Phone, MessageCircle, ShieldCheck, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, MessageCircle, ShieldCheck, Linkedin, Facebook } from "lucide-react";
+import { XIcon } from "../common/XIcon";
 import { COMPANY_INFO } from "../../lib/constants";
 
 const NAV_LINKS = [
@@ -45,15 +46,29 @@ export function Header() {
             </a>
 
             {/* WhatsApp */}
-            <a
-              href={COMPANY_INFO.whatsAppLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-green-400 hover:text-green-300 transition-colors font-bold"
-            >
+            <div className="flex items-center gap-1 text-green-400 font-bold">
               <MessageCircle size={13} />
-              <span>WhatsApp: {COMPANY_INFO.whatsApp}</span>
-            </a>
+              <span>WhatsApp:</span>
+              <a
+                href={COMPANY_INFO.whatsAppLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-green-300 transition-colors underline decoration-green-500/50"
+                title="Chat via Kenya WhatsApp"
+              >
+                +254 759 964753
+              </a>
+              <span className="text-white/40">/</span>
+              <a
+                href={COMPANY_INFO.whatsAppSecondaryLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-green-300 transition-colors underline decoration-green-500/50"
+                title="Chat via South Sudan WhatsApp"
+              >
+                +211 922 596464
+              </a>
+            </div>
 
             {/* Social Icons */}
             <div className="flex items-center gap-2 pl-3 border-l border-white/20">
@@ -76,13 +91,14 @@ export function Header() {
                 <Facebook size={12} />
               </a>
               <a
-                href={COMPANY_INFO.socials.twitter}
+                href={COMPANY_INFO.socials.x}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
+                aria-label="X"
+                title="X"
                 className="w-5 h-5 rounded flex items-center justify-center hover:text-[#ef9d4a] text-white/70 transition-colors"
               >
-                <Twitter size={12} />
+                <XIcon size={12} />
               </a>
             </div>
           </div>
@@ -240,15 +256,27 @@ export function Header() {
               <Phone size={14} className="text-[#ef9d4a]" />
               <span>Call: {COMPANY_INFO.phoneCall}</span>
             </a>
-            <a
-              href={COMPANY_INFO.whatsAppLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-green-700 font-bold"
-            >
-              <MessageCircle size={14} className="text-green-600" />
-              <span>WhatsApp: {COMPANY_INFO.whatsApp}</span>
-            </a>
+            <div className="flex items-center gap-2 text-green-700 font-bold flex-wrap">
+              <MessageCircle size={14} className="text-green-600 shrink-0" />
+              <span>WhatsApp:</span>
+              <a
+                href={COMPANY_INFO.whatsAppLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-green-800"
+              >
+                +254 759 964753
+              </a>
+              <span className="text-gray-400">/</span>
+              <a
+                href={COMPANY_INFO.whatsAppSecondaryLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-green-800"
+              >
+                +211 922 596464
+              </a>
+            </div>
           </div>
 
           <nav className="flex flex-col gap-3">

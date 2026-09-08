@@ -10,6 +10,7 @@ import {
   Compass,
   CheckCircle2,
   Package,
+  Mail,
 } from "lucide-react";
 import { SERVICE_PORTFOLIOS } from "../lib/constants";
 
@@ -154,6 +155,24 @@ export function ServicesPage() {
                           Inquire Now
                         </Link>
                       </div>
+
+                      {/* Direct Department Inbox */}
+                      {service.contactEmail && (
+                        <div className="p-4 rounded-2xl bg-[#FDF5EC] border border-orange-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs">
+                          <div className="flex items-center gap-2">
+                            <Mail size={15} className="text-[#ef9d4a] shrink-0" />
+                            <span className="text-gray-700 font-semibold">
+                              Direct Department Email:
+                            </span>
+                          </div>
+                          <a
+                            href={`mailto:${service.contactEmail}`}
+                            className="font-bold text-[#1A237E] hover:text-[#ef9d4a] transition-colors underline break-all"
+                          >
+                            {service.contactEmail}
+                          </a>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

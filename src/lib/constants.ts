@@ -22,6 +22,8 @@ export interface ServiceItem {
   keyPriorities: string[];
   deliverables: string[];
   iconName: string;
+  contactEmail?: string;
+  departmentName?: string;
 }
 
 export interface StrategicObjective {
@@ -46,6 +48,58 @@ export interface ApproachStage {
   activities: string[];
 }
 
+export interface DepartmentEmail {
+  id: string;
+  department: string;
+  email: string;
+  role: string;
+}
+
+export const DEPARTMENT_EMAILS: DepartmentEmail[] = [
+  {
+    id: "customer-care",
+    department: "Customer Care",
+    email: "customer@ipiconsultancy.com",
+    role: "Client onboarding, customer support and inquiries",
+  },
+  {
+    id: "admin",
+    department: "Admin",
+    email: "admin@ipiconsultancy.com",
+    role: "General administration, official correspondences and operations",
+  },
+  {
+    id: "finance",
+    department: "Finance",
+    email: "finance@ipiconsultancy.com",
+    role: "Invoicing, financial audits, accounting and cost advisory",
+  },
+  {
+    id: "business-development",
+    department: "Business Development",
+    email: "businessdevelopment@ipiconsultancy.com",
+    role: "Strategic partnerships, growth proposals and market entry",
+  },
+  {
+    id: "sales",
+    department: "Sales",
+    email: "sales@ipiconsultancy.com",
+    role: "Consultancy packages, fee structures and bookings",
+  },
+  {
+    id: "human-resources",
+    department: "Human Resources",
+    email: "hr@ipiconsultancy.com",
+    role: "Workforce advisory, talent solutions and staffing",
+  },
+  {
+    id: "general",
+    department: "General",
+    email: "general@ipiconsultancy.com",
+    role: "General organization inquiries and institutional communications",
+  },
+];
+
 // ── BRAND & COMPANY OVERVIEW ────────────────────────────────────────────────
 export const COMPANY_INFO = {
   name: "IPI Consultancy",
@@ -59,12 +113,24 @@ export const COMPANY_INFO = {
   area: "Nyakuron West",
   city: "Juba",
   country: "South Sudan",
-  email: "info@ipiconsultancy.com",
+  email: "general@ipiconsultancy.com",
+  emails: {
+    customerCare: "customer@ipiconsultancy.com",
+    admin: "admin@ipiconsultancy.com",
+    finance: "finance@ipiconsultancy.com",
+    businessDevelopment: "businessdevelopment@ipiconsultancy.com",
+    sales: "sales@ipiconsultancy.com",
+    humanResources: "hr@ipiconsultancy.com",
+    general: "general@ipiconsultancy.com",
+  },
   phone: "+211 920 000 000 / +211 912 000 000",
   phoneCall: "+211 920 000 000",
   phoneCallAlt: "+211 912 000 000",
-  whatsApp: "0759964753",
-  whatsAppLink: "https://wa.me/256759964753",
+  whatsApp: "+254 759 964753 / +211 922 596464",
+  whatsAppPrimary: "+254 759 964753",
+  whatsAppSecondary: "+211 922 596464",
+  whatsAppLink: "https://wa.me/254759964753",
+  whatsAppSecondaryLink: "https://wa.me/211922596464",
   consultancyFocus: "South Sudan-focused business and management consultancy",
   strategicPeriod: "2026–2030",
   heroHeadline: "Empowering South Sudan Businesses to Grow, Control Costs & Develop People",
@@ -75,8 +141,10 @@ export const COMPANY_INFO = {
   socials: {
     linkedin: "https://linkedin.com/company/ipi-consultancy-south-sudan",
     facebook: "https://facebook.com/ipiconsultancy",
-    twitter: "https://twitter.com/ipiconsultancy",
-    whatsapp: "https://wa.me/256759964753",
+    twitter: "https://x.com/ipiconsultancy",
+    x: "https://x.com/ipiconsultancy",
+    whatsapp: "https://wa.me/254759964753",
+    whatsappSecondary: "https://wa.me/211922596464",
   },
 };
 
@@ -409,6 +477,8 @@ export const SERVICE_PORTFOLIOS: ServiceItem[] = [
     title: "Business Development & Sales",
     category: "Business Development",
     tagline: "Drive revenue growth, enter new markets and build resilient commercial models.",
+    departmentName: "Business Development & Sales",
+    contactEmail: "businessdevelopment@ipiconsultancy.com",
     description:
       "We help businesses identify profitable opportunities, sharpen their value proposition, structure high-converting sales pipelines, and capture greater market share across South Sudan.",
     keyPriorities: [
@@ -431,6 +501,8 @@ export const SERVICE_PORTFOLIOS: ServiceItem[] = [
     title: "Finance & Cost Control",
     category: "Cost & Finance",
     tagline: "Eliminate operational waste, optimize expenditure and protect profit margins.",
+    departmentName: "Finance & Cost Advisory",
+    contactEmail: "finance@ipiconsultancy.com",
     description:
       "Our finance and cost-control interventions conduct rigorous expenditure forensics, institute strict budgeting controls, and optimize procurement to maximize cash flow and operational resilience.",
     keyPriorities: [
@@ -453,6 +525,8 @@ export const SERVICE_PORTFOLIOS: ServiceItem[] = [
     title: "Human Resources & Organizational Development",
     category: "Human Resources",
     tagline: "Build accountable, high-performing teams aligned with strategic objectives.",
+    departmentName: "Human Resources & Talent",
+    contactEmail: "hr@ipiconsultancy.com",
     description:
       "We design end-to-end HR systems, job descriptions, performance appraisal metrics, and leadership coaching programs that transform workforce culture and drive employee productivity.",
     keyPriorities: [
@@ -475,6 +549,8 @@ export const SERVICE_PORTFOLIOS: ServiceItem[] = [
     title: "Customer Care & Administration",
     category: "Customer Care",
     tagline: "Institutionalize service excellence, front-desk efficiency and admin agility.",
+    departmentName: "Customer Care & Admin",
+    contactEmail: "customer@ipiconsultancy.com",
     description:
       "We refine customer touchpoints, administrative workflows, and front-office protocols to build an impeccable brand reputation that converts first-time buyers into loyal brand advocates.",
     keyPriorities: [
@@ -497,6 +573,8 @@ export const SERVICE_PORTFOLIOS: ServiceItem[] = [
     title: "General Management & Strategic Advisory",
     category: "General Advisory",
     tagline: "Navigate complex business environments with seasoned strategic counsel.",
+    departmentName: "General Advisory & Operations",
+    contactEmail: "general@ipiconsultancy.com",
     description:
       "We provide board-level advisory, executive mentorship, change management guidance, and strategic planning sessions that equip business owners with clarity and decision-making confidence.",
     keyPriorities: [
