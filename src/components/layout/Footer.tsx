@@ -32,14 +32,6 @@ export function Footer() {
             >
               <MessageCircle size={16} /> WhatsApp: +254 759 964753
             </a>
-            <a
-              href={COMPANY_INFO.whatsAppSecondaryLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-green-700 text-white font-bold text-sm shadow-lg hover:bg-green-800 transition-all"
-            >
-              <MessageCircle size={16} /> WhatsApp: +211 922 596464
-            </a>
           </div>
         </div>
       </div>
@@ -111,19 +103,9 @@ export function Footer() {
               href={COMPANY_INFO.whatsAppLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp Kenya"
-              title="WhatsApp Kenya (+254 759 964753)"
+              aria-label="WhatsApp"
+              title="WhatsApp (+254 759 964753)"
               className="w-9 h-9 rounded-full bg-green-600/80 hover:bg-green-600 flex items-center justify-center text-white transition-colors"
-            >
-              <MessageCircle size={16} />
-            </a>
-            <a
-              href={COMPANY_INFO.whatsAppSecondaryLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp South Sudan"
-              title="WhatsApp South Sudan (+211 922 596464)"
-              className="w-9 h-9 rounded-full bg-green-700/80 hover:bg-green-700 flex items-center justify-center text-white transition-colors"
             >
               <MessageCircle size={16} />
             </a>
@@ -238,24 +220,14 @@ export function Footer() {
               <MessageCircle size={16} className="text-green-400 shrink-0 mt-0.5" />
               <div>
                 <span className="text-xs font-bold text-green-400 block">WhatsApp:</span>
-                <div className="flex flex-col text-xs text-white/90">
-                  <a
-                    href={COMPANY_INFO.whatsAppLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-green-300 transition-colors"
-                  >
-                    +254 759 964753 (KE)
-                  </a>
-                  <a
-                    href={COMPANY_INFO.whatsAppSecondaryLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-green-300 transition-colors"
-                  >
-                    +211 922 596464 (SS)
-                  </a>
-                </div>
+                <a
+                  href={COMPANY_INFO.whatsAppLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-white/90 hover:text-green-300 transition-colors"
+                >
+                  +254 759 964753
+                </a>
               </div>
             </li>
             <li className="text-xs text-white/60 pt-1">

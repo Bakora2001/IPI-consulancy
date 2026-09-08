@@ -267,14 +267,6 @@ export function AboutPage() {
               >
                 <MessageCircle size={16} /> WhatsApp: +254 759 964753
               </a>
-              <a
-                href={COMPANY_INFO.whatsAppSecondaryLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-full bg-green-700 text-white font-bold text-sm shadow-xl hover:bg-green-800 transition-all flex items-center gap-2"
-              >
-                <MessageCircle size={16} /> WhatsApp: +211 922 596464
-              </a>
             </div>
           </div>
         </section>

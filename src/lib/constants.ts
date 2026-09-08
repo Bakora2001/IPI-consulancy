@@ -128,9 +128,7 @@ export const COMPANY_INFO = {
   phoneCallAlt: "+211 922 596464",
   whatsApp: "+254 759 964753",
   whatsAppPrimary: "+254 759 964753",
-  whatsAppSecondary: "+211 922 596464",
   whatsAppLink: "https://wa.me/254759964753",
-  whatsAppSecondaryLink: "https://wa.me/211922596464",
   consultancyFocus: "South Sudan-focused business and management consultancy",
   strategicPeriod: "2026–2030",
   heroHeadline: "Empowering South Sudan Businesses to Grow, Control Costs & Develop People",
@@ -144,7 +142,6 @@ export const COMPANY_INFO = {
     twitter: "https://x.com/ipiconsultancy",
     x: "https://x.com/ipiconsultancy",
     whatsapp: "https://wa.me/254759964753",
-    whatsappSecondary: "https://wa.me/211922596464",
   },
 };
 

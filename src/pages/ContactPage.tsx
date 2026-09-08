@@ -110,23 +110,12 @@ export function ContactPage() {
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-sm text-green-900">WhatsApp Direct Support</h4>
-                    <p className="text-xs text-gray-600 mt-0.5">Quick instant response on either line:</p>
-                    <div className="mt-2 space-y-1.5">
-                      <div className="flex items-center justify-between gap-2 bg-white/80 p-2 rounded-xl border border-green-100">
-                        <span className="text-xs font-bold text-green-950">+254 759 964753 (KE)</span>
+                    <p className="text-xs text-gray-600 mt-0.5">Quick instant response via our official line:</p>
+                    <div className="mt-2">
+                      <div className="flex items-center justify-between gap-2 bg-white/80 p-2.5 rounded-xl border border-green-100">
+                        <span className="text-xs font-bold text-green-950">+254 759 964753</span>
                         <a
                           href={COMPANY_INFO.whatsAppLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-[11px] font-bold text-green-700 hover:text-green-900 underline"
-                        >
-                          Chat Now <ExternalLink size={11} />
-                        </a>
-                      </div>
-                      <div className="flex items-center justify-between gap-2 bg-white/80 p-2 rounded-xl border border-green-100">
-                        <span className="text-xs font-bold text-green-950">+211 922 596464 (SS)</span>
-                        <a
-                          href={COMPANY_INFO.whatsAppSecondaryLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-[11px] font-bold text-green-700 hover:text-green-900 underline"

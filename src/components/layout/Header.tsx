@@ -46,7 +46,7 @@ export function Header() {
             </a>
 
             {/* WhatsApp */}
-            <div className="flex items-center gap-1 text-green-400 font-bold">
+            <div className="flex items-center gap-1.5 text-green-400 font-bold">
               <MessageCircle size={13} />
               <span>WhatsApp:</span>
               <a
@@ -54,19 +54,9 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-green-300 transition-colors underline decoration-green-500/50"
-                title="Chat via Kenya WhatsApp"
+                title="Chat via WhatsApp"
               >
                 +254 759 964753
-              </a>
-              <span className="text-white/40">/</span>
-              <a
-                href={COMPANY_INFO.whatsAppSecondaryLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-green-300 transition-colors underline decoration-green-500/50"
-                title="Chat via South Sudan WhatsApp"
-              >
-                +211 922 596464
               </a>
             </div>
 
@@ -266,15 +256,6 @@ export function Header() {
                 className="underline hover:text-green-800"
               >
                 +254 759 964753
-              </a>
-              <span className="text-gray-400">/</span>
-              <a
-                href={COMPANY_INFO.whatsAppSecondaryLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-green-800"
-              >
-                +211 922 596464
               </a>
             </div>
           </div>

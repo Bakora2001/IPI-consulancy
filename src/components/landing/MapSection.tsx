@@ -63,30 +63,16 @@ export function MapSection() {
                   <MessageCircle size={18} className="text-green-600 shrink-0 mt-0.5" />
                   <div className="flex-1 space-y-1">
                     <p className="text-[10px] font-bold text-green-800 uppercase">WhatsApp Instant Chat</p>
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
-                      <div className="flex items-center gap-1.5">
-                        <span className="font-black text-green-950">+254 759 964753</span>
-                        <a
-                          href={COMPANY_INFO.whatsAppLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold text-green-700 hover:text-green-900 underline flex items-center gap-0.5"
-                        >
-                          KE <ExternalLink size={10} />
-                        </a>
-                      </div>
-                      <span className="text-gray-300 hidden sm:inline">|</span>
-                      <div className="flex items-center gap-1.5">
-                        <span className="font-black text-green-950">+211 922 596464</span>
-                        <a
-                          href={COMPANY_INFO.whatsAppSecondaryLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-bold text-green-700 hover:text-green-900 underline flex items-center gap-0.5"
-                        >
-                          SS <ExternalLink size={10} />
-                        </a>
-                      </div>
+                    <div className="flex items-center gap-2 text-xs">
+                      <span className="font-black text-green-950">+254 759 964753</span>
+                      <a
+                        href={COMPANY_INFO.whatsAppLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] font-bold text-green-700 hover:text-green-900 underline flex items-center gap-0.5"
+                      >
+                        Chat Now <ExternalLink size={10} />
+                      </a>
                     </div>
                   </div>
                 </div>
