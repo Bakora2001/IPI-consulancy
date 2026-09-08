@@ -18,8 +18,7 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@ndip/shared/*": ["../shared/*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["src"],

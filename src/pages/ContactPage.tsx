@@ -99,9 +99,6 @@ export function ContactPage() {
                         {COMPANY_INFO.phoneCall}
                       </a>
                     </p>
-                    <p className="text-xs text-gray-600 mt-0.5">
-                      Alt: <a href={`tel:${COMPANY_INFO.phoneCallAlt}`} className="hover:text-[#ef9d4a] transition-colors">{COMPANY_INFO.phoneCallAlt}</a>
-                    </p>
                     <span className="text-[10px] text-gray-500 font-medium">Calls start with South Sudan code (+211)</span>
                   </div>
                 </div>
