@@ -105,7 +105,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-2 max-w-lg text-[14px] sm:text-[15px] leading-relaxed text-white/90">
-            IPI Consultancy is a South Sudan-focused business and management consultancy supporting organizations, businesses and entrepreneurs to improve performance, strengthen internal systems and achieve sustainable growth. We work at the intersection of private-sector development and organizational performance, helping businesses and development programmes translate ideas and investments into measurable commercial and operational results.
+            <strong className="font-bold text-white">Ideal Professional Investment Ltd (IPI Consultancy)</strong> is a premier South Sudan-focused business and management consultancy firm supporting organizations, businesses, and entrepreneurs to accelerate revenue growth, control operational costs, and develop high-performing human resources.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">

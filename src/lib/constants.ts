@@ -113,6 +113,8 @@ export const COMPANY_INFO = {
   area: "Nyakuron West",
   city: "Juba",
   country: "South Sudan",
+  website: "https://idealprofessionalinvestment.com",
+  domain: "idealprofessionalinvestment.com",
   email: "general@ipiconsultancy.com",
   emails: {
     customerCare: "customer@ipiconsultancy.com",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ipiconsultancy.com/sitemap.xml
+Sitemap: https://idealprofessionalinvestment.com/sitemap.xml
